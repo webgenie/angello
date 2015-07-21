@@ -1,5 +1,5 @@
 <div class="user-wrapper">
-    <h2>Stories Assigned to {{myUser.user.name}}</h2>
+    <h2>{{myUser.user.name}}에게 배정된 스토리 목록</h2>
     <article ng-repeat="(id, story) in myUser.stories" class="{{story.type}}">
         <div class="modal-header">
             <h3>{{story.title}}</h3>

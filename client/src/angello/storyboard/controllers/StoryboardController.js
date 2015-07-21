@@ -17,7 +17,7 @@ angular.module('Angello.Storyboard')
 
         UsersModel.all()
             .then(function (result) {
-                storyboard.users = (result !== null && result.length > 0) ? result : [{name: 'Please create a user'}];
+                storyboard.users = (result !== null && result.length > 0) ? result : [{name: '사용자를 생성해 주세요.'}];
                 $log.debug('RESULT', result);
             }, function (reason) {
                 $log.debug('REASON', reason);

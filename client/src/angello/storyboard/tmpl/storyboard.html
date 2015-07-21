@@ -60,12 +60,12 @@
     </div>
 
     <div ng-if="storyboard.detailsVisible" class="my-fade-animation">
-        <h3>Card Details</h3>
+        <h3>카드 상세 정보</h3>
 
         <form name="storyboard.detailsForm" novalidate="">
             <div class="form-group">
                 <div class="controls">
-                    <label class="control-label" for="inputTitle">*Title</label>
+                    <label class="control-label" for="inputTitle">*제목</label>
                     <input class="form-control" type="text" id="inputTitle" name="inputTitle"
                            placeholder="Title" ng-model="storyboard.editedStory.title"
                            ng-required="true" ng-minlength="3" ng-maxlength="30">
@@ -75,23 +75,23 @@
                          ng-if="storyboard.showMessages('inputTitle')">
 
                         <div ng-message="required">
-                            <small>Required!</small>
+                            <small>반드시 입력해 주세요!</small>
                         </div>
                         <div ng-message="minlength">
-                            <small>Too short!</small>
+                            <small>제목이 너무 짧습니다!</small>
                         </div>
                         <div ng-message="maxlength">
-                            <small>Too long!</small>
+                            <small>제목이 너무 깁니다!</small>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label" for="inputStatus">*Status</label>
+                <label class="control-label" for="inputStatus">*상태</label>
 
                 <div class="controls">
                     <select id="inputStatus" name="inputStatus" class="form-control" ng-model="storyboard.editedStory.status" ng-options="l.name as l.name for l in storyboard.statuses" ng-required="true">
-                        <option value="">Select Status</option>
+                        <option value="">상태를 선택하세요</option>
                     </select>
 
                     <div
@@ -100,17 +100,17 @@
                       ng-if="storyboard.showMessages('inputStatus')">
 
                       <div ng-message="required">
-                        <small>Required!</small>
+                        <small>상태를 선택해 주세요!</small>
                       </div>
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label" for="inputType">*Type</label>
+                <label class="control-label" for="inputType">*종류</label>
 
                 <div class="controls">
                     <select id="inputType" name="inputType" class="form-control" ng-model="storyboard.editedStory.type" ng-options="t.name as t.name for t in storyboard.types" ng-required="true">
-                        <option value="">Select Type</option>
+                        <option value="">종류를 선태하세요</option>
                     </select>
 
                     <div
@@ -119,50 +119,50 @@
                       ng-if="storyboard.showMessages('inputType')">
 
                       <div ng-message="required">
-                        <small>Required!</small>
+                        <small>종류를 선택해 주세요!</small>
                       </div>
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label" for="inputDescription">Description</label>
+                <label class="control-label" for="inputDescription">설명</label>
 
                 <div class="controls">
                     <textarea id="inputDescription" name="inputDescription" class="form-control" placeholder="Description" rows="3" ng-model="storyboard.editedStory.description"></textarea>
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label" for="inputAcceptance">Acceptance Criteria</label>
+                <label class="control-label" for="inputAcceptance">필수 구현 조건</label>
 
                 <div class="controls">
                     <textarea id="inputAcceptance" name="inputAcceptance" class="form-control" placeholder="Acceptance Criteria" rows="3" ng-model="storyboard.editedStory.criteria"></textarea>
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label">*Reporter</label>
+                <label class="control-label">*보고자</label>
 
                 <div class="controls">
                     <select ng-model="storyboard.editedStory.reporter" class="form-control"
                         name="inputReporter" ng-required="true" ng-options="user.id as user.name for user in storyboard.users">
-                        <option value="">Please select...</option>
+                        <option value="">선택해 주세요...</option>
                     </select>
                     <div ng-class="{'alert alert-error alert-warning': storyboard.detailsForm.inputReporter.$invalid}"
                          ng-messages="storyboard.detailsForm.inputReporter.$error"
                          ng-if="storyboard.showMessages('inputReporter')">
 
                       <div ng-message="required">
-                        <small>Required!</small>
+                        <small>보고자를 선택해 주세요!</small>
                       </div>
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label">*Assignee</label>
+                <label class="control-label">*담당자</label>
 
                 <div class="controls">
                     <select ng-model="storyboard.editedStory.assignee" class="form-control"
                         name="inputAssignee" ng-required="true" ng-options="user.id as user.name for user in storyboard.users">
-                        <option value="">Please select...</option>
+                        <option value="">선택해 주세요...</option>
                     </select>
 
                     <div
@@ -171,7 +171,7 @@
                       ng-if="storyboard.showMessages('inputAssignee')">
 
                       <div ng-message="required">
-                        <small>Required!</small>
+                        <small>담당자를 선택해 주세요!</small>
                       </div>
                     </div>
                 </div>
@@ -180,16 +180,16 @@
         <hr>
         <div ng-if="storyboard.currentStory">
             <button class="btn btn-default" ng-click="storyboard.updateCancel()">
-                Cancel
+                취소
             </button>
             <button class="btn pull-right btn-default"
                     ng-disabled="storyboard.detailsForm.$invalid"
-                    ng-click="storyboard.updateStory()">Update</button>
+                    ng-click="storyboard.updateStory()">확인</button>
         </div>
         <div ng-if="!storyboard.currentStory">
             <button class="btn pull-right btn-default"
                     ng-disabled="storyboard.detailsForm.$invalid"
-                    ng-click="storyboard.createStory()">New Storyboard</button>
+                    ng-click="storyboard.createStory()">새로 만들기</button>
         </div>
     </div>
 </div>

@@ -8,6 +8,6 @@ angular.module('Angello.Login')
             }, function() {
               $location.path('/');
             }, function(error) {
-              $log.error("There's an error logging in", error);
+              $log.error("로그인을 처리하는 동안 오류가 발생했습니다: ", error);
             });
         });
