@@ -18,9 +18,9 @@ angular.module('Angello.Storyboard')
         UsersModel.all()
             .then(function (result) {
                 storyboard.users = (result !== null && result.length > 0) ? result : [{name: '사용자를 생성해 주세요.'}];
-                $log.debug('RESULT', result);
+                $log.debug('결과', result);
             }, function (reason) {
-                $log.debug('REASON', reason);
+                $log.debug('이유', reason);
             });
 
         storyboard.setCurrentStory = function (story) {
@@ -34,9 +34,9 @@ angular.module('Angello.Storyboard')
             StoriesModel.all()
                 .then(function (result) {
                     storyboard.stories = (result !== 'null') ? result : {};
-                    $log.debug('RESULT', result);
+                    $log.debug('결과', result);
                 }, function (reason) {
-                    $log.debug('REASON', reason);
+                    $log.debug('이유', reason);
                 });
         };
 
@@ -45,7 +45,7 @@ angular.module('Angello.Storyboard')
                 .then(function (result) {
                     storyboard.getStories();
                     storyboard.resetForm();
-                    $log.debug('RESULT', result);
+                    $log.debug('결과', result);
                 }, function (reason) {
                     $log.debug('ERROR', reason);
                 });
@@ -62,9 +62,9 @@ angular.module('Angello.Storyboard')
                 .then(function (result) {
                     storyboard.getStories();
                     storyboard.resetForm();
-                    $log.debug('RESULT', result);
+                    $log.debug('결과', result);
                 }, function (reason) {
-                    $log.debug('REASON', reason);
+                    $log.debug('이유', reason);
                 });
         };
 
@@ -122,9 +122,9 @@ angular.module('Angello.Storyboard')
         storyboard.finalizeDrop = function (story) {
             StoriesModel.update(story.id, story)
                 .then(function (result) {
-                    $log.debug('RESULT', result);
+                    $log.debug('결과', result);
                 }, function (reason) {
-                    $log.debug('REASON', reason);
+                    $log.debug('이유', reason);
                 });
         };
 

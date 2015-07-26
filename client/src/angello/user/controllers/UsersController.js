@@ -19,7 +19,7 @@ angular.module('Angello.User')
                 .then(function (result) {
 
                     myUsers.users = (result !== 'null') ? result : {};
-                    $log.debug('RESULT', result);
+                    $log.debug('결과', result);
                 }, function (reason) {
                     $log.debug('ERROR', reason);
                 });
@@ -31,7 +31,7 @@ angular.module('Angello.User')
                     myUsers.getUsers();
                     myUsers.newUser = { name: '', email: '' };
                     resetForm();
-                    $log.debug('RESULT', result);
+                    $log.debug('결과', result);
                 }, function (reason) {
                     $log.debug('ERROR', reason);
                 });
@@ -41,7 +41,7 @@ angular.module('Angello.User')
           if (myUsers.userForm.$valid) {
             UsersModel.update(id, user)
                 .then(function (result) {
-                    $log.debug('RESULT', result);
+                    $log.debug('결과', result);
                 }, function (reason) {
                     $log.debug('ERROR', reason);
                 });
@@ -52,7 +52,7 @@ angular.module('Angello.User')
             UsersModel.destroy(id)
                 .then(function (result) {
                     myUsers.getUsers();
-                    $log.debug('RESULT', result);
+                    $log.debug('결과', result);
                 }, function (reason) {
                     $log.debug('ERROR', reason);
                 });

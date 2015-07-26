@@ -17,7 +17,7 @@ angular.module('Angello.User')
                     StoriesModel.destroy(id)
                         .then(function (result) {
                             $rootScope.$broadcast('storyDeleted');
-                            $log.debug('RESULT', result);
+                            $log.debug('결과', result);
                         }, function (reason) {
                             $log.debug('ERROR', reason);
                         });
