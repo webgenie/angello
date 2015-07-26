@@ -47,7 +47,7 @@ angular.module('Angello.Storyboard')
                     storyboard.resetForm();
                     $log.debug('결과', result);
                 }, function (reason) {
-                    $log.debug('ERROR', reason);
+                    $log.debug('오류', reason);
                 });
         };
 

@@ -21,7 +21,7 @@ angular.module('Angello.User')
                     myUsers.users = (result !== 'null') ? result : {};
                     $log.debug('결과', result);
                 }, function (reason) {
-                    $log.debug('ERROR', reason);
+                    $log.debug('오류', reason);
                 });
         };
 
@@ -33,7 +33,7 @@ angular.module('Angello.User')
                     resetForm();
                     $log.debug('결과', result);
                 }, function (reason) {
-                    $log.debug('ERROR', reason);
+                    $log.debug('오류', reason);
                 });
         };
 
@@ -43,7 +43,7 @@ angular.module('Angello.User')
                 .then(function (result) {
                     $log.debug('결과', result);
                 }, function (reason) {
-                    $log.debug('ERROR', reason);
+                    $log.debug('오류', reason);
                 });
           }
         };
@@ -54,7 +54,7 @@ angular.module('Angello.User')
                     myUsers.getUsers();
                     $log.debug('결과', result);
                 }, function (reason) {
-                    $log.debug('ERROR', reason);
+                    $log.debug('오류', reason);
                 });
         };
 
