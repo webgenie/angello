@@ -151,8 +151,8 @@ angular.module('Angello.Storyboard')
         };
 
         dropContainer.addDropTarget = function (anchor, dropTarget) {
-            if (validAnchors.indexOf(anchor) < 0) throw new Error('Invalid anchor point ' + anchor);
-            if (targets[anchor]) throw new Error('Duplicate drop targets for the anchor ' + anchor);
+            if (validAnchors.indexOf(anchor) < 0) throw new Error('지원되지 않는 형식의 앵커입니다: ' + anchor);
+            if (targets[anchor]) throw new Error('앵커에 대한 드롭 대상이 이미 지정되어 있습니다: ' + anchor);
 
             targets[anchor] = dropTarget;
         };
