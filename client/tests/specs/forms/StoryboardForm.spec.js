@@ -48,11 +48,11 @@ describe('Storyboard form', function() {
 
     it('should be valid with populated fields', function() {
         ctrl.editedStory = {
-            title: 'Title',
-            status: 'To Do',
-            type: 'Enhancement',
-            reporter: 'Lukas Ruebbelke',
-            assignee: 'Brian Ford'
+            title: '제목',
+            status: '할 일',
+            type: '개선',
+            reporter: '보고자',
+            assignee: '담당자'
         };
 
         scope.$digest();
