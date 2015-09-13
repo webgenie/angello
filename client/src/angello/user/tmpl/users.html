@@ -50,7 +50,7 @@
 
         <form name="users.newUserForm" class="form-inline new-user" role="form" novalidate ng-submit="users.addUser()">
             <div class="form-group">
-                <input required name="userName" type="text" class="form-control" ng-model="users.newUser.name" placeholder="Name">
+                <input required name="userName" type="text" class="form-control" ng-model="users.newUser.name" placeholder="이름">
                 <div class="error" ng-messages="users.newUserForm.userName.$error" ng-if="users.showMessages('userName')">
                     <div ng-message="required">
                       이름을 입력해 주세요.
@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <input required name="userEmail" type="email" class="form-control" ng-model="users.newUser.email" placeholder="Email">
+                <input required name="userEmail" type="email" class="form-control" ng-model="users.newUser.email" placeholder="메일 주소">
                 <div class="error" ng-messages="users.newUserForm.userEmail.$error" ng-if="users.showMessages('userEmail')">
                     <div ng-message="required">
                       메일 주소를 입력해 주세요.
