@@ -23,7 +23,7 @@
                         </button>
                         <p class="title">{{story.title}}</p>
                     </div>
-                    <div class="type-bar {{story.type}}"></div>
+                    <div class="type-bar {{storyboard.getFriendlyTypeName(story.type)}}"></div>
                     <div>
                         <p>{{story.description}}</p>
                     </div>
@@ -110,7 +110,7 @@
 
                 <div class="controls">
                     <select id="inputType" name="inputType" class="form-control" ng-model="storyboard.editedStory.type" ng-options="t.name as t.name for t in storyboard.types" ng-required="true">
-                        <option value="">종류를 선태하세요</option>
+                        <option value="">종류를 선택하세요</option>
                     </select>
 
                     <div

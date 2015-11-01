@@ -132,6 +132,23 @@ angular.module('Angello.Storyboard')
             story.status = status.name;
         };
 
+        // 스토리의 종류에 따른 스타일 적용을 위해 추가 구현된 함수
+        storyboard.getFriendlyTypeName = function(storyboardType) {
+            console.log(storyboardType);
+            switch (storyboardType) {
+                case '기능':
+                    return 'Feature';
+                case '개선':
+                    return 'Enhancement';
+                case '버그':
+                    return 'Bug';
+                case '스파이크':
+                    return 'Spike';
+                default:
+                    return '';
+            }
+        };
+
         $scope.$on('storyDeleted', function () {
             storyboard.getStories();
             storyboard.resetForm();
